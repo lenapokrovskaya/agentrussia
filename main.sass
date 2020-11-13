@@ -1,0 +1,1416 @@
+@import "colors"
+@import "fonts"
+
+
+html
+  font-size: 1px
+
+body
+  font-size: 18rem
+  font-family: "Open Sans", sans-serif
+  background-color: $bg-extra-light
+  margin: 0
+  padding: 0
+  overflow-x: hidden
+  @media (max-width:767px)
+    text-align: center
+
+a
+  text-decoration: none
+
+img
+  display: inline-block
+  height: auto
+
+.visually-hidden
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  border: 0
+  padding: 0
+  clip: rect(0 0 0 0)
+  overflow: hidden
+
+.logo_img
+  width: 301px
+  @media (max-width:1199px) 
+    width: 170px
+  @media (max-width:767px)
+    width: 267px
+    height: auto
+    
+.top-nav_wrapper
+  margin-top: 30px
+  @media (max-width:767px)
+    margin-top: 43px
+
+.top-nav_logo-wrapper
+  z-index: 2
+  text-align: left
+
+/* Меню на мобильном */
+.top-nav
+  z-index: 1  
+  @media (max-width:991px)
+    position: relative
+    top: -86px
+    width: 100%
+    left: auto
+    right: 0
+    z-index: 4
+    padding-top: 10%
+    padding-bottom: 10%
+  &_menu
+    list-style: none
+    padding: 0
+    display: flex
+    justify-content: space-between
+    margin: 0
+    @media (max-width:991px)
+      flex-direction: column
+    li
+      margin-right: 20px
+      @media (min-width:992px) and (max-width:1199px)
+        margin-right: 15px
+      @media (max-width:991px)
+        position: relative
+        top: 0
+        display: block
+        padding: 12px 21px
+        padding-bottom: 13px
+        font-size: 18px
+        line-height: 24px
+        color: #ffffff
+        background-color: $bg-dark
+        margin: 0       
+    a
+      color: $white
+    li:last-child
+      margin-right: 0
+    li:nth-child(6n)    
+      @media (max-width:991px)
+        order: -1
+        border-bottom: 1px solid $special-grey
+        padding-bottom: 20px
+    li:nth-child(3n)    
+      @media (max-width:991px)
+        border-bottom: 1px solid $special-grey-2
+        padding-bottom: 20px
+
+.top-nav_menu-link:hover
+  color: $light-gold
+  border-bottom: 2px solid $light-gold
+  padding-bottom: 6px
+  &:active,
+  &:focus
+    opacity: 0.7
+
+.top-nav_toggle
+  display: none
+  @media (max-width:991px)
+    position: absolute
+    top: 45px
+    left: 650px
+    z-index: 13
+    display: block
+    width: 46px
+    height: 46px
+    background-color: transparent
+    cursor: pointer
+    border: 1px solid $light-bronze
+    border-radius: 5px
+    outline: none
+  @media (max-width:767px)
+    left: 450px
+    top: 39px
+  @media (max-width:575px)
+    display: block
+    left: 290px
+
+.top-nav-closed .top-nav_toggle:before
+  content: ""
+  position: absolute
+  top: 35%
+  left: 50%
+  transform: translate(-50%, -50%)
+  width: 24px
+  height: 2px
+  background-color: $light-bronze
+  box-shadow: 0 8px 0 0 $light-bronze, 0 16px 0 0 $light-bronze
+  
+
+.top-nav_toggle:active:before
+  background-color: rgba(0, 0, 0, 0.3)
+  box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.3)
+
+.top-nav-opened .top-nav_toggle
+  top: 39px
+  right: 300px
+  border: none
+  &:before,
+  &:after
+    content: ""
+    position: absolute
+    top: 50%
+    left: 13%
+    transform: translate(-50%, -50%)
+    width: 36px
+    height: 2px
+    background-color: $light-bronze
+  &:before
+    transform: rotate(45deg)
+    box-shadow: none
+  &:after
+    transform: rotate(-45deg)
+  &:active:before,
+  &:active:after
+    background-color: rgba(0, 0, 0, 0.3)
+
+
+@media (max-width:991px)
+  .top-nav-closed .top-nav_item
+    display: none
+
+/* Меню на мобильном - ок, до этого момента */
+
+.top-nav-opened .top-nav_menu-wrapper
+  background-color: transparent
+  @media (max-width:991px)
+    position: absolute
+    top: 0
+    left: 30%
+    z-index: 10
+    background-color: $bg-dark
+    padding-top: 40px
+    padding-bottom: 30px
+    width: 70%
+    text-align: left
+    overflow-x: hidden
+    @media (max-width: 767px)
+      left: 20%
+      width: 80%
+    @media (max-width: 575px)
+      left: 10%
+      width: 90%
+
+.top-nav-opened .top-nav_menu-wrapper:before
+  content: ""
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 2
+  width: 7px
+  height: 100%
+  box-shadow: inset 4px 0 7px -2px fade(#000000, 40%)
+
+
+.top-nav-nojs .top-nav_toggle
+    display: none
+
+.btn-menu
+  display: none !important
+  font-size: 20rem
+  line-height: 1.5
+  padding-top: 5%
+  padding-bottom: 5%
+  width: 100% 
+  color: $black !important
+  @media (max-width:991px)
+    display: block !important
+    width: 60% !important
+    padding-top: 2%
+    padding-bottom: 2%
+  @media (max-width:767px)
+    padding-top: 5%
+    padding-bottom: 5%
+    width: 100% !important
+  &:hover
+    color: $bronze-hover !important
+
+.phone
+  font-weight: bold
+
+.first-screen_wrapper
+  min-height: 866px
+  margin: 0 auto
+  padding: 0
+  @media (max-width:1199px) 
+    min-height: 751px
+  @media (max-width:991px)
+    min-height: 536px
+  @media (min-width: 576px) and (max-width: 767px)
+    min-height: 633px
+  @media (max-width:575px)
+    min-height: 580px
+
+.first-screen
+  position: absolute
+  width: 100%
+  min-height: 945px
+  top: 0%
+  left: 50%
+  transform: translate(-50%)
+  margin: 0 auto
+  padding: 0
+  background-image: url("../img/bg-main.png")
+  background-repeat: no-repeat
+  background-position: top center
+  background-size: cover
+  z-index: 0
+  color: $white
+  overflow: hidden
+  @media (max-width:1199px)
+    min-height: 811px
+  @media (max-width:991px)
+    min-height: 740px
+  @media (max-width:767px)
+    width: 100%
+    min-height: 740px
+    top: 0
+    background-image: url(../img/bg-main-mobile.png)
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: 0 0
+
+.first-screen_title
+  position: relative
+  margin: 0
+  margin-top: 265px
+  font-size: 50rem
+  font-family: "Raleway", sans-serif
+  text-transform: uppercase
+  width: 47%
+  @media (max-width:1599px)
+    margin-top: 20%
+    width: 55%    
+  @media (max-width:1199px)
+    width: 63%
+  @media (max-width: 991px)
+    width: 90%
+  @media (max-width:767px)
+    width: 100%
+    text-align: center
+    font-size: 28rem
+    line-height: 1.357
+    margin-top: 47%
+
+
+.first-screen_title:after
+  content: ""
+  position: absolute
+  width: 907px
+  height: 500px
+  top: -150px
+  left: 650px
+  padding: 0
+  background-image: url("../img/map-bg.png")
+  background-repeat: no-repeat
+  background-position: 0 0
+  @media (max-width:1199px)
+      top: -150px
+      left: 600px
+  @media (max-width:991px)
+    display: none
+    
+.first-screen_description
+  font-size: 22px
+  line-height: 1.545
+  margin: 0
+  margin-top: 25px
+  width: 40%
+  @media (max-width:1599px)
+    width: 50%
+  @media (max-width:1199px)
+    width: 61%
+  @media (max-width: 991px)
+    width: 90%
+  @media (max-width:767px)
+    font-size: 18rem
+    width: 100%
+    text-align: center
+    margin-top: 5%
+
+.first-screen_write
+  font-weight: bold
+  display: flex
+  flex-wrap: nowrap
+  width: 325px
+  margin: 0
+  margin-top: 35px
+  @media (max-width:767px)
+    padding: 5%
+    margin-top: 5%
+    width: 125%
+
+.first-screen_link
+  margin-left: 5%
+  @media (max-width:767px)
+  img
+    width: 34px
+    height: 34px
+
+.message_link:hover,
+.message_link:active,
+.message_link:focus
+  opacity: 0.7
+
+.first-screen_geo
+  display: flex
+  justify-content: space-evenly
+  flex-wrap: wrap
+  align-self: flex-end
+  @media (max-width:767px)
+    order: 1
+    margin-top: 8%
+    padding: 0
+
+@media (max-width:767px)
+  .first-screen_feedback
+    order: 2
+
+.first-screen_geo-point
+  position: relative
+  padding-left: 5%
+  @media (max-width:1599px)
+    padding-left: 10%
+    margin-top: 2%
+  @media (max-width:1199px)
+    padding-left: 9%
+    margin-top: 8%
+  @media (max-width:991px)
+    padding-left: 4%
+    margin-right: 4%
+    margin-top: 5%
+  @media (max-width:767px)
+    padding-left: 7%
+
+.first-screen_geo-point:before
+  content: ""
+  position: absolute
+  top: 0
+  left: 0
+  width: 25px
+  height: 29px
+  background-image: url("../img/icon-geo-point.svg")
+  background-repeat: no-repeat
+  background-position: 0 0
+
+.first-screen_numbers
+  display: flex
+  justify-content: space-between
+  margin-top: 7%
+  flex-wrap: wrap
+  @media (max-width:991px)
+    display: none
+  @media (min-width:992px) and (max-width:1199px)
+    margin-top: 3%
+    
+.numbers
+  background-color: $bg-dark
+  padding-top: 4%
+  padding-bottom: 32%
+  @media (max-width:991px)
+    padding-bottom: 6%
+  @media (min-width:992px)
+    display: none
+  @media (max-width:767px)
+    padding-bottom: 32%
+  @media (min-width:576px) and (max-width:767px)
+    padding-bottom: 6%
+  
+.numbers_wrapper
+  display: block
+  width: 100%
+  display: grid
+  grid-template-columns: 1fr
+  row-gap: 4%
+  background-color: $bg-dark
+  margin: 0
+  font-size: 20rem
+  font-family: "Open Sans", sans-serif
+  color: $white
+  line-height: 1.4
+  span
+    display: block
+    font-weight: bold
+    text-transform: uppercase
+    color: $light-gold-2
+  @media (min-width: 576px) and (max-width: 991px)
+    grid-template-columns: 1fr 1fr
+  @media (min-width:992px)
+    display: none
+
+.first-screen_number
+  margin: 0
+  font-size: 20rem
+  font-family: "Open Sans", sans-serif
+  color: $white
+  line-height: 1.4
+  span
+    display: block
+    font-weight: bold
+    text-transform: uppercase
+    color: $light-gold-2
+
+.first-screen_number-1,
+.first-screen_number-2,
+.first-screen_number-3,
+.first-screen_number-4
+  position: relative 
+
+.number-1,
+.number-2,
+.number-3,
+.number-4
+  position: relative
+  margin: 0
+  display: flex
+  flex-direction: column
+  padding-top: 20%
+  @media (max-width:991px)
+    text-align: center
+
+.first-screen_number-1
+  padding-left: 4% 
+  @media (min-width:992px) and (max-width:1199px)
+    padding-left: 6% 
+
+.first-screen_number-1:before
+  content: ""
+  position: absolute
+  top: 0
+  left: -6px
+  width: 44px
+  height: 44px
+  background-image: url("../img/icon-people.svg")
+  background-repeat: no-repeat
+  background-position: 0 0
+  @media (min-width:992px) and (max-width:1199px)
+    left: 5px
+
+.number-1:before
+  content: ""
+  position: absolute
+  top: 24%
+  left: 50%
+  transform: translate(-50%, -24%)
+  width: 44px
+  height: 44px
+  background-image: url("../img/icon-people.svg")
+  background-repeat: no-repeat
+  background-position: 0 0
+
+.first-screen_number-2
+  margin-left: 10px
+
+.first-screen_number-2:before
+  content: ""
+  position: absolute
+  top: 0
+  left: -77px
+  width: 57px
+  height: 51px
+  background-image: url("../img/icon-area.svg")
+  background-repeat: no-repeat
+  background-position: 0 0
+  @media (min-width:992px) and (max-width:1199px)
+    left: -54px
+
+.number-2:before
+  content: ""
+  position: absolute
+  top: 20%
+  left: 50%
+  transform: translate(-50%, -20%)
+  width: 57px
+  height: 51px
+  background-image: url("../img/icon-area.svg")
+  background-repeat: no-repeat
+  background-position: 0 0
+
+.first-screen_number-3
+  margin-left: 40px
+
+.first-screen_number-3:before
+  content: ""
+  position: absolute
+  top: 0
+  left: -80px
+  width: 55px
+  height: 55px
+  background-image: url("../img/icon-routes.svg")
+  background-repeat: no-repeat
+  background-position: 0 0
+  @media (min-width:992px) and (max-width:1199px)
+    left: -61px
+  
+
+.number-3:before
+  content: ""
+  position: absolute
+  top: 20%
+  left: 50%
+  transform: translate(-50%, -20%)
+  width: 55px
+  height: 55px
+  background-image: url("../img/icon-routes.svg")
+  background-repeat: no-repeat
+  background-position: 0 0
+
+.first-screen_number-4
+  margin-right: 20px
+  @media (min-width:992px) and (max-width:1199px)
+    margin-right: 0px
+
+.first-screen_number-4:before
+  content: ""
+  position: absolute
+  top: 0
+  left: -70px
+  width: 60px
+  height: 60px
+  background-image: url("../img/icon-gdp.svg")
+  background-repeat: no-repeat
+  background-position: 0 0
+  @media (min-width:992px) and (max-width:1199px)
+    left: -59px
+    width: 52px
+
+.number-4:before
+  content: ""
+  position: absolute
+  top: 18%
+  left: 50%
+  transform: translate(-50%, -18%)
+  width: 60px
+  height: 60px
+  background-image: url("../img/icon-gdp.svg")
+  background-repeat: no-repeat
+  background-position: 0 0
+
+.btn
+  display: inline-block
+  font-family: "Raleway", sans-serif
+  font-size: 16rem
+  line-height: 1
+  text-align: center
+  border-radius: 30px
+  background-color: $light-gold
+  color: $black
+  font-weight: bold
+  text-transform: uppercase
+  width: auto
+  padding-left: 2%
+  padding-right: 2%
+  &:hover
+    color: $bronze-hover
+    background-image: linear-gradient( 180deg, rgb(231,206,152) 0%, rgb(231,206,152) 50%, rgb(219,193,138) 50%, rgb(219,193,138) 100%)
+    &:active,
+    &:focus
+      opacity: 0.7
+  
+
+.btn-first-screen
+  font-size: 20rem
+  line-height: 1.5
+  padding-top: 5%
+  padding-bottom: 5%
+  width: 100%
+  margin-top: 40px
+  @media (max-width:1199px)
+    width: 150%
+  @media (max-width:991px)
+    width: 60%
+    padding-top: 2%
+    padding-bottom: 2%
+  @media (max-width:767px)
+    padding-top: 3%
+    padding-bottom: 3%
+    width: 80%
+    margin-top: 15%
+  @media (max-width:575px)
+    padding-top: 5%
+    padding-bottom: 5%
+    width: 100%
+    margin-top: 24%
+
+.how-we-work
+  overflow: hidden
+
+.img-how-we-work
+  box-sizing: content-box
+  border-left: 10px solid $light-bronze
+  height: 100%
+
+.how-we-work_steps
+  display: grid
+  grid-template-columns: 1fr 1fr
+  column-gap: 25px
+  row-gap: 50px
+  margin-top: 60px
+  margin-bottom: 60px
+  @media (max-width:1599px)
+    row-gap: 10px
+  @media (max-width:767px)
+    grid-template-columns: 1fr
+    row-gap: 0
+    margin-bottom: 7%
+
+@media (max-width:767px)
+.how-we-work_steps-description
+  margin-top: 1%
+  margin-bottom: 6%
+  line-height: 1.667
+  
+
+.how-we-work_numbers
+  font-family: "Arial Black", sans-serif
+  font-size: 24rem
+  border: 7px solid $light-bronze
+  border-radius: 50%
+  background-color: $light-bronze
+  padding: 15px
+  margin-right: 17px
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  width: 10px
+  height: 10px
+  max-width: 10px
+  max-height: 10px
+  @media (max-width:767px)
+    display: flex
+    margin: auto
+    font-size: 18rem
+    padding: 8px
+    margin-bottom: 5%
+
+.how-we-work_title
+  font-size: 44rem
+  font-family: "Raleway", sans-serif
+  color: $extra-dark-grey
+  text-transform: uppercase
+  line-height: 0.909
+  margin: 0
+  margin-top: 74px
+  @media (max-width:767px)
+    font-size: 30rem
+    margin-top: 15%
+
+.how-we-work_title:before
+  content: ""
+  position: absolute
+  width: 10%
+  top: 145px
+  left: 15px
+  height: 5px
+  background-color: $light-bronze
+  @media (max-width:767px)
+    width: 16%
+    top: 10%
+    left: 50%
+    transform: translate(-50%, -10%)
+  @media (max-width: 575px)
+    top: 7.5%
+    left: 50%
+    transform: translate(-50%, -7.5%)
+
+
+
+.how-we-work
+  h3
+    color: $extra-dark-grey
+    text-transform: uppercase
+    font-family: "Raleway", sans-serif
+    line-height: 1.4
+    @media (max-width:767px)
+      margin: 0
+
+.how-sale
+  background-color: $bg-dark
+  color: $white
+  padding-top: 70px
+  padding-bottom: 85px
+  border-left: 20px solid $light-bronze
+  @media (max-width:767px)
+    border: none
+    padding-top: 12%
+    padding-bottom: 15%
+
+.how-sale_title
+  font-size: 40rem
+  font-family: "Raleway", sans-serif
+  color: $white
+  text-transform: uppercase
+  margin: 0
+  margin-left: -10px
+  @media (max-width:767px)
+    font-size: 30rem
+    line-height: 1.267
+
+.how-sale_title:before
+  content: ""
+  position: absolute
+  width: 20%
+  top: 125px
+  left: 5px
+  height: 5px
+  background-color: $light-bronze
+  @media (max-width:1599px)
+    top: 27%
+  @media (max-width:1199px)
+    top: 38%
+  @media (max-width:992px)
+    top: 50%
+    width: 10%
+  @media (max-width:767px)
+    width: 16%
+    top: 53%
+    left: 50%
+    -webkit-transform: translate(-50%, -53%)
+    transform: translate(-50%, -7.5%)
+
+.how-sale_description
+  margin: 0
+  margin-top: 80px
+  line-height: 1.667
+  font-size: 18rem
+  font-weight: bold
+  text-align: left
+  margin-left: -10px
+  @media (max-width:767px)
+    margin-left: 0
+    text-align: center
+    margin-top: 14%
+  
+.how-sale_block
+  display: grid
+  grid-template-columns: 1fr 1fr
+  gap: 30px
+  margin-top: 10px
+  @media (max-width:767px)
+    grid-template-columns: 1fr
+    margin-top: 13%
+
+.how-sale_item
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  text-align: center
+  border: 2px solid $light-bronze
+  border-radius: 10px
+  padding-left: 5%
+  padding-right: 5%
+  padding-top: 10%
+  padding-bottom: 10%
+  @media (max-width:767px)
+    padding-top: 7%
+    padding-right: 3%
+    padding-left: 3%
+    padding-bottom: 8%
+    &:last-child
+      padding-right: 5%
+      padding-left: 5%
+      
+
+.how-sale_subtitle
+  margin: 0
+  font-size: 24rem
+  font-family: "Raleway", sans-serif
+  text-transform: uppercase
+  line-height: 1.167
+
+.how-sale_subtitle-description
+  margin: 0
+  margin-top: 21px
+  font-size: 18rem
+  @media (max-width:767px)
+    line-height: 1.667
+    margin-top: 5%
+
+.btn-how-sale
+  padding-top: 5%
+  padding-bottom: 5%
+  width: 65%
+  margin-top: 7%
+  margin-left: auto
+  margin-right: auto
+  @media (max-width:767px)
+    width: 95%
+    padding-top: 7%
+    padding-bottom: 7%
+
+
+.why-we
+  color: $black
+
+.img-why-we
+  box-sizing: content-box
+  height: 100%
+  margin-left: -195px
+  border-right: 10px solid $light-bronze
+  @media (max-width:1599px)
+    margin-left: -345px
+  @media (max-width:991px)
+    margin-left: -545px
+
+.why-we_title
+  font-size: 44rem
+  font-family: "Raleway", sans-serif
+  text-transform: uppercase
+  line-height: 0.909
+  margin: 0
+  margin-top: 67px
+  @media (max-width:767px)
+    font-size: 30rem
+    margin-top: 14%
+
+.why-we_title:before
+  content: ""
+  position: absolute
+  width: 11%
+  top: 140px
+  left: 15px
+  height: 5px
+  background-color: $light-bronze
+  @media (max-width:767px)
+    width: 16%
+    top: 9.5%
+    left: 50%
+    transform: translate(-50%, -9.5%)
+
+
+.why-we_subtitle
+  font-size: 24rem
+  font-family: "Raleway", sans-serif
+  text-transform: uppercase
+  line-height: 1.167
+  margin: 0
+  @media (max-width:767px)
+    font-size: 20rem
+    line-height: 1.4
+
+.why-we_subtitle-description
+  font-size: 16rem
+  font-family: "Open Sans"
+  line-height: 1.75
+  margin: 0
+  margin-top: 2%
+  @media (max-width:767px)
+    font-size: 18px
+    line-height: 1.556
+
+.why-we_block
+  display: flex
+  flex-direction: column
+  row-gap: 40px
+  margin-top: 90px
+  padding-bottom: 69px
+  @media (max-width:767px)
+    margin-top: 18%
+    row-gap: 30px
+    padding-bottom: 14%
+
+.why-we_item-1
+  position: relative
+  border: 2px solid $light-bronze
+  border-radius: 8px
+  padding-top: 3%
+  padding-bottom: 3%
+  padding-left: 173px
+  @media (max-width:767px)
+    padding-left: 2%
+    padding-right: 2%
+    padding-top: 27%
+    padding-bottom: 7%
+    display: flex
+    flex-direction: column
+
+  
+
+.why-we_item-2 
+  position: relative
+  border: 2px solid $light-bronze
+  border-radius: 8px
+  padding-top: 5%
+  padding-bottom: 4%
+  padding-left: 173px
+  @media (max-width:767px)
+    padding-left: 2%
+    padding-right: 2%
+    padding-top: 27%
+    padding-bottom: 7%
+    display: flex
+    flex-direction: column
+
+.why-we_item-3 
+  position: relative
+  border: 2px solid $light-bronze
+  border-radius: 8px
+  padding-top: 5%
+  padding-bottom: 4%
+  padding-left: 173px
+  @media (max-width:767px)
+    padding-left: 2%
+    padding-right: 2%
+    padding-top: 27%
+    padding-bottom: 7%
+    display: flex
+    flex-direction: column
+
+.why-we_item-1:before
+  content: ""
+  position: absolute
+  top: 41px
+  left: 40px
+  width: 95px
+  height: 78px
+  background-image: url("../img/icon-deal.svg")
+  background-repeat: no-repeat
+  background-position: 0 0
+  @media (max-width:767px)
+    top: 11%
+    left: 50%
+    transform: translate(-50%, -11%)
+    width: 68px
+    height: 54px
+
+.why-we_item-2:before
+  content: ""
+  position: absolute
+  top: 30px
+  left: 42px
+  width: 95px
+  height: 95px
+  background-image: url("../img/icon-kpi.svg")
+  background-repeat: no-repeat
+  background-position: 0 0
+  @media (max-width:767px)
+    top: 11%
+    left: 55%
+    transform: translate(-55%, -11%)
+
+.why-we_item-3:before
+  content: ""
+  position: absolute
+  top: 30px
+  left: 33px
+  width: 65px
+  height: 65px
+  background-image: url("../img/icon-stuff.svg")
+  background-repeat: no-repeat
+  background-position: 0 0
+  @media (max-width:767px)
+    width: 60px
+    height: 60px
+    top: 11%
+    left: 50%
+    transform: translate(-50%, -11%)
+
+.our-specialization
+  background-color: $bg-dark
+  padding-top: 115px
+  padding-bottom: 115px
+  font-family: "Raleway", sans-serif
+  color: $white
+  text-transform: uppercase
+  border-right: 20px solid $light-bronze
+  @media (max-width:767px)
+    border: none
+    padding-top: 12%
+  
+  
+
+.our-specialization_title
+  margin: 0
+  margin-bottom: 90px
+  font-size: 44rem
+  line-height: 0.909
+  @media (max-width:767px)
+    font-size: 30rem
+    line-height: 1.267
+    margin-bottom: 22%
+
+.our-specialization_title:before
+  content: ""
+  position: absolute
+  width: 6.5%
+  top: 70px
+  left: 15px
+  height: 5px
+  background-color: $light-bronze
+  @media (max-width:992px)
+    width: 10%
+  @media (max-width:767px)
+    width: 16%
+    top: 135%
+    left: 50%
+    transform: translate(-50%, -135%)
+
+.our-specialization_subtitle
+  margin: 0
+  margin-top: 6%
+  font-size: 20rem
+  line-height: 1.4
+  text-align: center
+  @media (max-width:767px)
+  font-size: 18px
+  line-height: 1.556
+  @media (max-width:992px)
+    margin-top: 2%
+    margin-bottom: 2%
+  @media (max-width:767px)
+    margin-bottom: 3%
+
+.our-specialization_img
+  width: 100%
+
+.contacts
+  background-color: $bg-light
+
+.contacts_title
+  position: relative
+  margin: 0
+  margin-top: 48px
+  font-size: 44rem
+  font-family: "Raleway", sans-serif
+  color: $black
+  text-transform: uppercase
+  line-height: 0.909
+  @media (max-width:767px)
+    font-size: 30rem
+
+.contacts_title:before
+  content: ""
+  position: absolute
+  width: 17%
+  top: 65px
+  left: 0
+  height: 5px
+  background-color: $light-bronze
+  @media (max-width:992px)
+    width: 10%
+  @media (max-width:767px)
+    top: 250%
+    left: 50%
+    transform: translate(-50%, -250%)
+
+.contacts_block
+  display: flex
+  flex-direction: column
+  margin-top: 75px
+
+.contacts_description-1,
+.contacts_description-2,
+.contacts_description-3
+  position: relative
+  margin: 0
+  font-size: 18rem
+  font-family: "Open Sans", sans-serif
+  color: $black
+  line-height: 1.667
+  padding-left: 12%
+  margin-bottom: 3.5%
+  @media (max-width:1199px)
+    padding-left: 14%
+  @media (max-width:767px)
+    font-size: 20rem
+    line-height: 1.4
+    padding-top: 15%
+    padding-left: 0
+    display: flex
+    flex-direction: column
+    margin-bottom: 11%
+  
+
+.contacts_description-1:before
+  content: ""
+  position: absolute
+  top: 10px
+  left: 0
+  width: 45px
+  height: 45px
+  background-image: url("../img/icon-phone.svg")
+  background-repeat: no-repeat
+  background-position: 0 0
+  @media (max-width:767px)
+    top: 3%
+    left: 50%
+    transform: translate(-50%, -3%)
+
+.contacts_description-2:before
+  content: ""
+  position: absolute
+  top: 10px
+  left: 0
+  width: 48px
+  height: 45px
+  background-image: url("../img/icon-email.svg")
+  background-repeat: no-repeat
+  background-position: 0 0
+  @media (max-width:767px)
+    top: 3%
+    left: 50%
+    transform: translate(-50%, -3%)
+
+.contacts_description-3:before
+  content: ""
+  position: absolute
+  top: 12px
+  left: 0
+  width: 45px
+  height: 43px
+  background-image: url("../img/icon-map.svg")
+  background-repeat: no-repeat
+  background-position: 0 0
+  @media (max-width:767px)
+    top: 3%
+    left: 50%
+    transform: translate(-50%, -3%)
+
+.contacts_description_bold
+  display: block
+  font-weight: bold
+
+.contacts_subtitle
+  position: relative
+  font-size: 44rem
+  font-family: "Raleway", sans-serif
+  color: $black
+  text-transform: uppercase
+  line-height: 0.909
+  margin: 0
+  margin-top: 8%
+  @media (max-width:767px)
+    font-size: 30rem
+    font-family: "Raleway"
+    line-height: 1.333
+    margin-top: 1%
+
+
+.contacts_subtitle:before
+  content: ""
+  position: absolute
+  width: 17%
+  top: 75px
+  left: 0
+  height: 5px
+  background-color: $light-bronze
+  @media (max-width:1199px)
+    top: 133%
+  @media (max-width:992px)
+    width: 10%
+    top: 180%
+  @media (max-width:767px)
+    top: 170%
+    left: 50%
+    transform: translate(-50%, -170%)
+
+.contacts_form
+  margin-top: 9%
+
+.contacts_input,
+.contacts_input-text
+  font-size: 18rem
+  font-family: "Open Sans", sans-serif
+  color: $dark-grey
+  width: 80%
+  border: none
+  border-bottom: 1px solid grey
+  background-color: $bg-light
+  padding-top: 29px
+  padding-bottom: 10px
+  margin-top: 0.5%
+  outline: none
+  @media (max-width:767px)
+    margin-top: -3.5%
+    width: 90%
+
+.contacts_map-wrapper
+  box-shadow: inset 10px 0px 0px 0px $light-bronze
+  padding: 0
+  padding-left: 10px
+  @media (max-width:991px)
+    box-shadow: none
+    padding: 0
+    padding-left: 0
+  @media (max-width:767px)
+    box-shadow: none
+    padding: 0
+
+.contacts_map
+  box-sizing: content-box
+  border: none
+  filter: grayscale(100%)
+  display: block
+  @media (max-width:991px)
+    height: 600px
+  @media (max-width:767px)
+    height: 300px
+  
+
+.contacts_input::placeholder,
+.contacts_input-text::placeholder
+  font-size: 18rem
+  font-family: "Open Sans", sans-serif
+  color: $dark-grey
+  line-height: 1.667
+  background-color: $bg-light
+  @media (max-width:767px)
+    text-align: center
+
+.btn-contacts
+  padding-top: 3%
+  padding-bottom: 3%
+  padding-left: 30px
+  padding-right: 30px
+  width: 60%
+  margin-top: 1%
+  border: none
+  @media (max-width:767px)
+    width: 85%
+    padding-top: 6%
+    padding-bottom: 6%
+
+.contacts_write
+  font-weight: bold
+  display: flex
+  flex-wrap: nowrap
+  width: 325px
+  margin: 0
+  margin-top: 22px
+  padding-bottom: 40px
+  @media (max-width:767px)
+    padding: 5%
+
+.contacts_write_link
+  margin-left: 5%
+  
+
+.news
+  padding-top: 115px
+  @media (max-width:767px)
+  padding-top: 14%
+
+.news_block
+  padding-top: 99px
+  padding-bottom: 50pх
+  img
+    width: 100%
+
+.news_title
+  font-size: 42rem
+  font-family: "Raleway", sans-serif
+  color: $black
+  text-transform: uppercase
+  line-height: 0.952
+  margin: 0
+  margin-left: -15px
+  @media (max-width:767px)
+    font-size: 30rem
+    line-height: 1.267
+    margin-left: 0
+
+.news_title:before
+  content: ""
+  position: absolute
+  width: 7%
+  top: 65px
+  left: 15px
+  height: 5px
+  background-color: $light-bronze
+  @media (max-width:991px)
+    width: 10%
+  @media (max-width:767px)
+    width: 16%
+    top: 135%
+    left: 50%
+    transform: translate(-50%, -135%)
+
+.btn-news
+  padding-top: 1.5%
+  padding-bottom: 1.5%
+  width: auto
+  margin-top: 30px
+  margin-bottom: 100px
+  @media (max-width:991px)
+    padding-top: 2%
+    padding-bottom: 2%
+  @media (max-width:767px)
+    padding-top: 6%
+    padding-bottom: 6%
+    width: 90%
+    margin-top: 4%
+    margin-bottom: 21%
+
+.btn-news-area
+  width: 100%
+  display: flex
+  justify-content: center
+
+
+.page-footer
+  background-color: $bg-dark
+  font-size: 16rem
+  color: $light-grey-2
+  line-height: 1.438
+  padding-top: 39px
+  padding-bottom: 43px
+
+.page-footer_wrapper
+  margin: 0
+  @media (max-width:991px)
+    text-align: center
+
+.page-footer_copy
+  margin: 0
+  padding-top: 53px
+ 
+.page-footer_menu
+  list-style: none
+  padding: 0
+  margin: 0
+  display: flex
+  justify-content: space-between
+  font-size: 18rem
+  @media (max-width:1199px)
+    font-size: 16rem
+  @media (max-width:767px)
+    flex-direction: column 
+  li
+    margin-right: 20px
+    @media (max-width:1199px)
+      margin-right: 15px
+    @media (max-width:767px)
+      margin-right: 0
+    a
+      color: $white
+  li:last-child
+    margin-right: 0
+    @media (max-width:767px)
+      order: -2
+  li:nth-child(4n)
+    @media (max-width:767px)
+      order: -3
+
+
+.page-footer_policy
+  display: flex
+  justify-content: flex-end
+  column-gap: 15px
+  @media (max-width:991px)
+    justify-content: center
+  @media (max-width:767px)
+    flex-direction: column
+
+.page-footer_privacy,
+.page-footer_agreement
+  color: $light-grey-2
+  padding-top: 58px
+  @media (max-width:767px)
+    padding-top: 2%
+
+@import "media"
+
+
